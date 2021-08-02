@@ -19,7 +19,7 @@ namespace exercicio4
             else if((inicio < 0 || inicio > 1000) || (fim < 0 || fim > 1000)) {
                 Console.WriteLine("início ou fim, não podem ser números negativos e não podem ser maiores de mil");
             }
-            else if(fim - inicio > 10) {
+            else if(fim - inicio >= 10) {
                 Console.WriteLine("O intervalo entre início e fim não pode ser maiior que dez");
             }
             else if(fim < inicio) {
