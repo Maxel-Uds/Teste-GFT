@@ -1,4 +1,5 @@
 ﻿using System;
+using exercicio4.Entities;
 
 namespace exercicio4
 {
@@ -13,22 +14,9 @@ namespace exercicio4
             Console.Write("Fim do intervalo: ");
             int fim = int.Parse(Console.ReadLine());
 
-            if(multi > 1000) {
-                Console.WriteLine("O multiplicando não pode ser maior que mil");
-            }
-            else if((inicio < 0 || inicio > 1000) || (fim < 0 || fim > 1000)) {
-                Console.WriteLine("início ou fim, não podem ser números negativos e não podem ser maiores de mil");
-            }
-            else if(fim - inicio >= 10) {
-                Console.WriteLine("O intervalo entre início e fim não pode ser maiior que dez");
-            }
-            else if(fim < inicio) {
-                Console.WriteLine("O início do intervalo deve ser menor que o fim");
-            }
-            else {
-                for(int i = inicio; i <= fim; i++) {
-                    Console.WriteLine($"{multi} X {i} = {(i * multi)}");
-                }
+            Controle control = new Controle(multi, inicio, fim);
+            if(control.Verifica() == 0) {
+                control.Calcula();
             }
         }
     }
